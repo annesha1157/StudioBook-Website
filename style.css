@@ -1,0 +1,1167 @@
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #07142f;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   NAVBAR  (shared across every page)
+   ========================================================= */
+
+.studio-navbar {
+    background-color: #14254d;
+    border: 1px solid #243b72;
+    border-radius: 20px;
+    margin: 42px 5.5% 0 5.5%;
+    padding: 13px 30px;
+    height: 72px;
+}
+
+.logo-box {
+    background: linear-gradient(135deg, #7139e8, #8a35e8);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.brand-name {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.navbar-nav {
+    gap: 18px;
+}
+
+.nav-link {
+    color: #c99df5 !important;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.nav-link.active {
+    color: white !important;
+}
+
+.navbar-toggler {
+    border: 1px solid #8b5cf6;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+/* =========================================================
+   HOME PAGE — HERO
+   ========================================================= */
+
+.hero {
+    margin-top: 105px;
+    padding: 0 5.5%;
+}
+
+.hero-text {
+    padding-left: 0;
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.13;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #c99df5;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.55;
+    max-width: 520px;
+    margin-bottom: 32px;
+}
+
+.explore-btn {
+    background: linear-gradient(90deg, #7139e8, #8135e8);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 27px;
+    border-radius: 13px;
+    border: none;
+}
+
+.explore-btn:hover {
+    background: linear-gradient(90deg, #8135e8, #963df0);
+    color: white;
+}
+
+.explore-btn span {
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+/* Home page hero image only — kept separate from the
+   Services page image (.service-studio-image below) so
+   the two never fight over the same class name. */
+.studio-image {
+    width: 100%;
+    height: 365px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid #263f79;
+    display: block;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   STUDIOS PAGE
+   ========================================================= */
+
+.studios-section {
+    margin: 72px 5% 0 5%;
+}
+
+.studio-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:100px;
+    margin-bottom: 40px;
+}
+
+.studio-title h1,
+.studios-section h1 {
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.studio-subtitle {
+    color: #c99df5;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* --- Filter buttons --- */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.filter-btn {
+    background-color: #14254d;
+    border: 1px solid #263f79;
+    color: #c99df5;
+    font-weight: 600;
+    font-size: .92rem;
+    padding: .45rem 1.1rem;
+    border-radius: 999px;
+    transition: all .18s ease;
+}
+
+.filter-btn:hover {
+    color: #fff;
+    border-color: #8135e8;
+}
+
+.filter-btn.active {
+    background: linear-gradient(90deg, #7139e8, #8135e8);
+    border-color: #7139e8;
+    color: #fff;
+}
+
+/* Hides a card when JS adds the "hidden" class */
+.studio-item.hidden {
+    display: none;
+}
+
+/* Hidden by default — JS only reveals this when a filter
+   genuinely returns zero results, so it never flashes on load */
+.no-results {
+    display: none;
+}
+
+/* --- Studio cards --- */
+
+.studio-cards {
+    margin-top: 0;
+}
+
+.studio-card {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 350px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.studio-card:hover {
+    transform: translateY(-5px);
+}
+
+.studio-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 17px 18px;
+}
+
+.card-content h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.card-content p {
+    color: #c99df5;
+    font-size: 15px;
+    margin: 0;
+}
+
+.card-bottom {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-bottom span {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.book-btn {
+    background: linear-gradient(90deg, #7139e8, #8135e8);
+    color: white;
+    text-decoration: none;
+    padding: 7px 15px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.book-btn:hover {
+    color: white;
+    background: #963df0;
+}
+
+
+/* =========================================================
+   SERVICES PAGE
+   ========================================================= */
+
+.content-wrap {
+    padding: 68px 5.5% 80px;
+}
+
+.page-title {
+    color: white;
+    font-weight: 700;
+    font-size: 38px;
+    margin-bottom: 55px;
+}
+
+/* Renamed from .studio-image to avoid clashing with the
+   Home page hero image above — same class name, different
+   page, different sizing = conflict otherwise. */
+.service-studio-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid #263f79;
+    display: block;
+}
+
+.info-card {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 23px 22px;
+}
+
+.studio-name {
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.studio-price {
+    color: #c99df5;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 0;
+    color: white;
+    font-size: 16px;
+}
+
+.feature-list li i {
+    color: #c99df5;
+    font-size: 17px;
+}
+
+.btn-book {
+    background: #7139e8;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.btn-book:hover {
+    background: #8135e8;
+    color: white;
+    
+}
+
+.btn-book:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    /* Navbar */
+    .studio-navbar {
+        margin: 20px;
+        height: auto;
+    }
+
+    .navbar-nav {
+        margin-top: 15px;
+        gap: 5px;
+    }
+
+    /* Home */
+    .hero {
+        margin-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-text {
+        margin-bottom: 50px;
+    }
+
+    /* Studios — absolute centering only works with room to
+       spare; stack normally on small screens instead */
+    .studio-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .filter-bar {
+        width: 100%;
+    }
+
+    /* Services */
+    .service-studio-image {
+        min-height: 280px;
+        margin-bottom: 5px;
+    }
+
+    .content-wrap {
+        padding: 45px 5% 60px;
+    }
+ /* Pricing */
+.pricing-section {
+    margin: 45px 5% 60px 5%;
+}
+
+.pricing-title {
+    font-size: 32px;
+}
+
+.pricing-subtitle {
+    margin-bottom: 35px;
+}
+
+.pricing-card {
+    min-height: auto;
+    padding: 25px 20px;
+}}
+
+/* =========================================================
+   REVIEWS PAGE
+   ========================================================= */
+
+.reviews-section {
+    margin: 70px 5% 0 5%;
+}
+
+.reviews-title {
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 45px;
+}
+
+
+/* Review cards */
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-card {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 18px 24px;
+    min-height: 108px;
+}
+
+.stars {
+    color: #ffd21f;
+    font-size: 19px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.review-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 3px 0;
+}
+
+.review-name {
+    color: #c99df5;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Review Form */
+
+.review-form {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 30px;
+    margin-top: 0;
+    max-width: 100%;
+}
+
+.review-form h3 {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.review-form .form-control {
+    background-color: #07142f;
+    border: 1px solid #263f79;
+    color: white;
+    margin-bottom: 16px;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.review-form .form-control::placeholder {
+    color: #9ba8c7;
+}
+
+.review-form .form-control:focus {
+    background-color: #07142f;
+    color: white;
+    border-color: #7139e8;
+    box-shadow: none;
+}
+
+.review-btn {
+    background-color: #7139e8;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.review-btn:hover {
+    background-color: #8135e8;
+}
+
+.user-reviews {
+    margin-top: 0;
+    max-width: 95%;
+    margin-left: auto;
+}
+
+.user-review-card {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.user-review-card .review-text {
+    margin-bottom: 8px;
+}
+
+.user-review-card .review-name {
+    margin: 0;
+}
+.rating {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.rating span {
+    color: #59698f;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.rating span.active {
+    color: #ffd21f;
+}
+
+.rating span:hover {
+    color: #ffd21f;
+}
+/* =========================================================
+   PRICING PAGE
+   ========================================================= */
+
+.pricing-section {
+    margin: 70px 5% 80px 5%;
+}
+
+.pricing-title {
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+    color: #c99df5;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+
+/* --- Pricing Cards --- */
+
+.pricing-cards {
+    align-items: stretch;
+}
+
+.pricing-card {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 25px 23px;
+    min-height: 390px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.pricing-description {
+    color: #c99df5;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 43px;
+    margin-bottom: 5px;
+}
+
+
+/* --- Price --- */
+
+.price {
+    color: white;
+    font-size: 29px;
+    font-weight: 700;
+    margin: 17px 0;
+}
+
+.price span {
+    color: #c99df5;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* --- Package Features --- */
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+}
+
+.pricing-card li {
+    color: white;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+.pricing-card li i {
+    color: #7139e8;
+    margin-right: 8px;
+}
+
+
+/* --- Book Button --- */
+
+.pricing-btn {
+    display: block;
+    width: 100%;
+    background: #7139e8;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 18px;
+    transition: 0.2s;
+}
+
+.pricing-btn:hover {
+    background: #8135e8;
+    color: white;
+}
+
+
+/* --- Most Popular Package --- */
+
+.pricing-card.featured {
+    border: 2px solid #7139e8;
+}
+
+.popular {
+    display: inline-block;
+    background: #7139e8;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    margin-top: 60px;
+    padding: 18px 5%;
+    text-align: center;
+    border-top: 1px solid #263f79;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 12px;
+}
+
+.social-icons a {
+    color: #c99df5;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+.footer p {
+    color: #9ba8c7;
+    font-size: 13px;
+    margin: 0;
+}
+/* =========================
+   BOOKING PAGE
+   ========================= */
+
+.booking-section {
+    margin: 85px 4.2% 80px;
+}
+
+.booking-title {
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 100px;
+}
+
+
+/* =========================
+   BOOKING FORM CARD
+   ========================= */
+
+.booking-card {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 27px;
+}
+
+
+/* Labels */
+
+.booking-card label {
+    display: block;
+    color: #c99df5;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+/* Inputs */
+
+.booking-card .form-control,
+.booking-card .form-select {
+    background-color: #0d1e42;
+    border: 1px solid #263f79;
+    color: white;
+    height: 38px;
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+
+.booking-card .form-control::placeholder {
+    color: #ffffff;
+}
+
+
+.booking-card .form-control:focus,
+.booking-card .form-select:focus {
+    background-color: #0d1e42;
+    color: white;
+    border-color: #7139e8;
+    box-shadow: none;
+}
+
+
+/* Select arrow */
+
+.booking-card .form-select {
+    cursor: pointer;
+}
+
+
+/* =========================
+   CONFIRM BUTTON
+   ========================= */
+
+.confirm-btn {
+    width: 100%;
+    border: none;
+    background: linear-gradient(90deg, #7139e8, #8135e8);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 11px;
+    border-radius: 8px;
+    margin-top: 2px;
+    transition: 0.2s;
+}
+
+.confirm-btn span {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.confirm-btn:hover {
+    background: #8135e8;
+}
+
+
+/* =========================
+   RIGHT PREVIEW CARD
+   ========================= */
+
+.booking-preview {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 19px;
+}
+
+
+.booking-image {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+}
+
+
+.price-row span {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.price-row strong {
+    color: #c99df5;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+.time-section {
+    margin-top: 20px;
+}
+
+.time-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.time-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 15px;
+    background-color: #07142f;
+    color: white;
+    border: 1px solid #263f79;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.time-btn:hover {
+    border-color: #7139e8;
+}
+
+.time-btn.active {
+    background-color: #7139e8;
+    border-color: #7139e8;
+    color: white;
+}
+
+
+/* =========================
+   CONFIRMATION POPUP
+   ========================= */
+
+.confirmation-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 10, 30, 0.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+
+.confirmation-overlay.show {
+    display: flex;
+}
+
+
+.confirmation-box {
+    width: 420px;
+    background-color: #142955;
+    border: 1px solid #7139e8;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.success-icon {
+    width: 55px;
+    height: 55px;
+    background-color: #7139e8;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.success-icon i {
+    color: white;
+    font-size: 27px;
+}
+
+
+.confirmation-box h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+
+.confirmation-box > p {
+    color: #c99df5;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* Confirmation information */
+
+.confirmation-details {
+    background-color: #0d1e42;
+    border-radius: 12px;
+    padding: 10px 17px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+.confirmation-details div {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #263f79;
+}
+
+
+.confirmation-details div:last-child {
+    border-bottom: none;
+}
+
+
+.confirmation-details span {
+    color: #c99df5;
+    font-size: 14px;
+}
+
+
+.confirmation-details strong {
+    color: white;
+    font-size: 14px;
+}
+
+
+.confirmation-details .total-row strong {
+    color: #c99df5;
+    font-size: 18px;
+}
+
+
+/* Done button */
+
+.done-btn {
+    width: 100%;
+    border: none;
+    background-color: #7139e8;
+    color: white;
+    padding: 11px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.done-btn:hover {
+    background-color: #8135e8;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 991px) {
+
+    .booking-section {
+        margin: 55px 5% 60px;
+    }
+
+    .booking-title {
+        font-size: 32px;
+        margin-bottom: 45px;
+    }
+
+    .booking-preview {
+        margin-top: 5px;
+    }
+
+    .booking-image {
+        height: 250px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .booking-card {
+        padding: 20px;
+    }
+
+    .confirmation-box {
+        width: 90%;
+        padding: 25px;
+    }
+
+}
+/* Owner Dashboard */
+
+.owner-container {
+    margin: 70px 5.5%;
+}
+
+.owner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.owner-header h1 {
+    margin-bottom: 0;
+}
+
+.clear-bookings-btn {
+    background-color: #7139e8;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.clear-bookings-btn:hover {
+    background-color: #8135e8;
+}
+
+.owner-subtitle {
+    color: #c99df5;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.booking-table-box {
+    background-color: #142955;
+    border: 1px solid #263f79;
+    border-radius: 18px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.booking-table {
+    color: white;
+    margin: 0;
+}
+
+.booking-table th {
+    color: #c99df5 !important;
+    background-color: #142955 !important;
+    border-bottom: 1px solid #263f79 !important;
+    padding: 15px;
+}
+
+.booking-table td {
+    color: white !important;
+    background-color: #142955 !important;
+    border-bottom: 1px solid #263f79 !important;
+    padding: 15px;
+}
+
+.no-bookings {
+    color: #9ba8c7;
+    text-align: center;
+    margin-top: 30px;
+}
